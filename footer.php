@@ -1,12 +1,13 @@
 			
-            <div class="footer-items footer-1">
-                <div class="page-wrapper clear">
+            
+
+    <footer class="footer-2">  
+    <div class="footer-items footer-1">
+                <div class=" clear">
                    
 					<?php dynamic_sidebar('footer-1'); ?>
 				</div>
-			</div>
-
-    <footer class="footer-2">      
+			</div>    
           <p class="copyright">
 					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>.
                 All rights reserved. <a href="http://taglinegroup.com"> Website Design</a> by Tagline.

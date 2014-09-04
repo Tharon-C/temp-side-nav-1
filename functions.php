@@ -230,9 +230,9 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Top Left
     register_sidebar(array(
-        'name' => __('Top Left', 'Area for business info etc'),
+        'name' => __('Side Nav Top', 'Area for business info etc'),
         'description' => __('Area for business info etc', 'html5blank'),
-        'id' => 'top-l',
+        'id' => 'side-nav-t',
         'before_widget' => '<div id="%1$s" class="%2$s top-wdgt-l">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="title-2">',
@@ -241,9 +241,9 @@ if (function_exists('register_sidebar'))
 
     // Define Sidebar Top Right
     register_sidebar(array(
-        'name' => __('Top Right', 'Area for business info etc'),
+        'name' => __('Side Nav bottom', 'Area for business info etc'),
         'description' => __('Area for business info etc', 'html5blank'),
-        'id' => 'top-r',
+        'id' => 'side-nav-b',
         'before_widget' => '<div id="%1$s" class="%2$s top-wdgt-r">',
         'after_widget' => '</div>',
         'before_title' => '<h3>',

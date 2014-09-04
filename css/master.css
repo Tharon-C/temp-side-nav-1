@@ -1,33 +1,55 @@
-/* wrapper */
-.wrapper, .wrap {
-  max-width: 2000px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative; }
+html {
+  color: white;
+  postition: relative;
+  background: url('../img/calendar-slide1.jpg') no-repeat 60% center fixed;
+  background-position: cover; }
+  @media (max-width: 45em) { }
 
-.page-wrapper, .p-wrap {
-  position: relative;
-  margin: auto;
-  max-width: 1200px;
-  width: 100%;
-  padding-right: 20px;
-  padding-left: 20px; }
+.content {
+  margin-left: 20%;
+  float: left;
+  width: 80%;
+  max-width: 1000px;
+  padding: 100px 50px; }
+  @media (max-width: 70em) {
+    .content {
+      padding: 20px;
+      margin-left: 200px;
+      width: 800px; } }
+  @media (max-width: 45em) {
+    .content {
+      float: none;
+      width: 100%;
+      padding: 0;
+      margin-left: 0; } }
+
+.content-int {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5); }
 
 /*======================================================== 
 header 
 ==========================================================*/
+.header {
+  z-index: 10;
+  width: 20%;
+  min-width: 200px;
+  background: #8DABE7;
+  position: fixed;
+  top: 0;
+  bottom: 0; }
+
 /* business information across the top of header */
 .business-info {
-  background: #0386C9;
-  padding: 5px; }
+  background: #026596;
+  padding: 5px 10px; }
   .business-info a {
-    color: #0386C9; }
+    color: lightgrey; }
   .business-info .top-wdgt-l {
     color: white;
     float: left; }
   .business-info .top-wdgt-r {
-    color: white;
-    float: right; }
+    color: lightgrey; }
   .business-info li {
     display: inline-block;
     margin-left: 20px;
@@ -37,7 +59,6 @@ header
 logo
 ================================================================= */
 .logo {
-  float: left;
   width: 150px;
   display: block;
   position: relative;
@@ -52,24 +73,18 @@ logo
 nav 
 ================================================================*/
 .nav {
-  padding: 0;
+  padding: 40px 0;
   display: block;
-  position: relative;
-  z-index: 10;
-  background: #00A9FF;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.21);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.21); }
+  z-index: 10; }
   .nav ul {
     margin: 0;
     padding: 0;
-    float: right;
-    position: absolute;
-    right: 0;
-    bottom: 0; }
+    width: 100%; }
   .nav li {
     position: relative;
-    display: inline-block;
-    margin-left: -4px; }
+    display: block;
+    margin-left: -4px;
+    border-bottom: solid 1px white; }
     .nav li a {
       display: block;
       color: white;
@@ -78,7 +93,7 @@ nav
       font-size: 14px;
       position: relative; }
   .nav a:hover {
-    background: #00A9FF; }
+    background: #026596; }
   .nav ul.sub-menu {
     display: none; }
     .nav ul.sub-menu a {
@@ -112,40 +127,29 @@ footer items
 =================================================================== */
 .footer-items {
   background: #e5e5e5;
-  padding: 25px 0;
   border-top: solid 1px #F2F2F2;
   color: #525252; }
-  .footer-items ul {
-    padding-left: 0; }
-  .footer-items .widget_nav_menu {
-    width: 33.3%;
-    float: left;
-    border-right: solid 1px #c2c2c2;
-    padding-left: 35px; }
-    @media (max-width: 45em) {
-      .footer-items .widget_nav_menu {
-        float: none;
-        width: 90%; } }
-  .footer-items .widget_text {
-    padding-left: 36px;
-    width: 33.3%;
-    float: left; }
-    @media (max-width: 45em) {
-      .footer-items .widget_text {
-        float: none;
-        width: 90%; } }
 
 /*=============================================================== 
 footer 
 ================================================================*/
 footer {
-  background: #00A9FF;
+  width: 80%;
+  right: 0;
+  position: fixed;
+  bottom: 0;
+  background: #026596;
   text-align: center;
   color: white;
-  padding: 10px;
   font-size: 12px; }
   footer a {
     color: white; }
+  @media (max-width: 45em) {
+    footer {
+      position: relative;
+      width: 100%;
+      padding: 0;
+      margin-left: 0; } }
 
 /* ==========================================================================
    =COLOR
@@ -154,10 +158,10 @@ footer {
   height: 5em; }
 
 .color-1 {
-  background: #00A9FF; }
+  background: #8DABE7; }
 
 .color-2 {
-  background: #0386C9; }
+  background: #026596; }
 
 .color-3 {
   background: #e5e5e5; }
@@ -175,7 +179,7 @@ footer {
   typography
   =========================================================================== */
 .headline-1 {
-  color: #0386C9;
+  color: #026596;
   display: block;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -215,7 +219,7 @@ input, textarea {
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #00A9FF; }
+  border-color: #8DABE7; }
 
 input[type='button'], input[type='submit'], button, .button {
   border: none;
@@ -231,17 +235,17 @@ input[type='button'], input[type='submit'], button, .button {
 
 .form-btn-1 {
   color: white;
-  background: #0386C9 !important; }
+  background: #026596 !important; }
 
 .btn-1 {
   color: white;
-  background: #0386C9; }
+  background: #026596; }
 
 .btn-1:hover {
-  background: #0386C9; }
+  background: #026596; }
 
 .btn-1:focus, .btn-1:active {
-  background: #0386C9; }
+  background: #026596; }
 
 .btn-2 {
   color: white;

@@ -29,20 +29,14 @@
 
 			<!-- header -->
 			<header class="header clear" role="banner">
-                <div class="business-info section-top clear">
-                    
-                    <div class="page-wrapper clear">
-                    <?php dynamic_sidebar('top-l'); ?>
-                    <?php dynamic_sidebar('top-r'); ?>
-					</div>
-                    
+                <div class="business-info section-top clear">  
+                  <?php dynamic_sidebar('side-nav-t'); ?>                             
                 </div>
-
 
 					<!-- nav -->
 					<nav class="nav clear" role="navigation">
     
-                        <div class="page-wrapper clear">    
+                        <div class="clear">    
                         <!-- logo -->
 				    <div class="logo">
 						<a href="<?php echo home_url(); ?>">
@@ -55,6 +49,7 @@
                             <?php  add_custom_nav_menu('menu-1'); ?>
                  </div>
 					</nav>
+					        <?php dynamic_sidebar('side-nav-b'); ?>
 					<!-- /nav -->
       		</header>
 			<!-- /header -->
