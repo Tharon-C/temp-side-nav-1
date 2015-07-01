@@ -1,8 +1,39 @@
+@function black($opacity){
+  @return rgba(0,0,0,$opacity)
+}
+@function white($opacity){
+  @return rgba(255,255,255,$opacity)
+}
+
+@mixin letterpress($opacity){
+  text-shadow:white($opacity) 0 1px 0;
+}
+
+@mixin box-emboss($opacity, $opacity2){
+  box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+
+@mixin btnHover($baseColor) {
+  background-color: $baseColor;
+  &:hover {
+        background-color: darken($baseColor, 10);
+          }
+  &:active, &:focus {
+    background-color:$baseColor;
+  }
+}
+
+
 $font-1:'Open Sans', sans-serif;
-$grey-1: white;
-$grey-2: #F2F2F2;
-$grey-3: rgb(229, 229, 229);
-$grey-4:lightgrey;
+$grey-1: rgba(245,245,245,1);
+$grey-2: rgba(230,230,230,1);
+$grey-3: rgba(200,200,200,1);
+$grey-4: rgba(170,170,170,1);
+$grey-5: rgba(140,140,140,1);
+$grey-6: rgba(100,100,100,1);
+$grey-7: rgba(50,50,50,1);
+$grey-8:black;
+$trans-blk:rgba(0,0,0,.8);
 $color-1:#8DABE7;
 $color-2:#026596;
 $color-3:rgb(229, 229, 229);
@@ -10,6 +41,8 @@ $color-4:#F7A710;
 $color-5:#9370E9;
 $color-6:#DDD5F8;
 $shadow-1:0 1px 2px rgba(0, 0, 0, 0.21);
+$shadow-2:0 1px 5px rgba(0, 0, 0, 1);
+$shadow-in-1:inset 0 1px 2px rgba(0, 0, 0, 0.21);
 
 
 
@@ -212,11 +245,10 @@ footer {
   }
 }
 
-/* ==========================================================================
-   =COLOR
-   ========================================================================== */
-.swatch {
+swatch {
+  box-sizing:border-box;
   height: 5em;
+  margin: 10px;
 }
 
 .color-1 {
@@ -243,32 +275,130 @@ footer {
   background: $color-6;
 }
 
+.grey-1 {
+  background: $grey-1;
+}
+
+.grey-2 {
+  background: $grey-2;
+}
+
+.grey-3 {
+  background: $grey-3;
+}
+
+.grey-4 {
+  background: $grey-4;
+}
+
+.grey-5 {
+  background: $grey-5;
+}
+
+.grey-6 {
+  background: $grey-6;
+}
+
+.grey-7 {
+  background: $grey-7;
+}
+
+.grey-8 {
+  background: $grey-8;
+}
+
+.txt-color-1 {
+  color: $color-1;
+}
+
+.txt-color-2 {
+  color: $color-2;
+}
+
+.txt-color-3 {
+  color: $color-3;
+}
+
+.txt-color-4 {
+  color: $color-4;
+}
+
+.txt-color-5 {
+  color: $color-5;
+}
+
+.txt-color-6 {
+  color: $color-6;
+}
+
+.txt-wht {
+  color:$grey-1;
+}
+
 
 /* ===========================================================================
   typography
   =========================================================================== */
+p {margin:0 0 20px;}
+
+ul li, ol li {line-height: 130%;}
+
+.pad-sm {
+  padding:10px;
+}
+
+.pad-m {
+  padding:25px;
+}
+
+.pad-l {
+  padding:50px;
+}
+
 .headline-1 {
-  color:$color-2;
   display:block;
   font-family:$font-1;
   font-weight: 700;
   font-size:53px;
+  line-height: 1.2em;
+  margin: 0 0 15px -3px;
 }
 
+.sub-headline-1 {
+  letter-spacing: .3em;
+  line-height: 1.2em;
+  display:block;
+  font-family:$font-1;
+  font-weight: 600;
+  font-size:24px;
+  margin: -20px 0 10px;
+}
 
 .title-1 {
   display:block;
   font-family:$font-1;
   font-weight: 400;
   font-size:42px;
+  line-height: 1.2em;
+   margin-bottom:15px;
 }
-
 
 .title-2 {
   display:block;
   font:$font-1;
-  font-weight:700;
-  font-size:22px;
+  font-weight:400;
+  font-size:24px;
+  line-height: 1.2em;
+  margin-bottom:15px;
+}
+
+.title-3 {
+  display:block;
+  font:$font-1;
+  font-weight:800;
+  font-size:16px;
+  line-height: 1.2em;
+   margin-bottom:10px;
 }
 
 /* ==========================================================================
@@ -278,7 +408,7 @@ footer {
   margin-top: -1.5em;
 }
 
-input, textarea {
+.input, .textarea {
   /* Use for styling text based form elements, like name, email, password. 
   Button/submit specific styles below, those will override */
   display: block;
@@ -286,94 +416,56 @@ input, textarea {
   margin-bottom: .75em;
   border: .1em solid $grey-4;
   width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease;
   transition: all .3s ease;
   resize: none;
+  font-size:16px;
 }
 
-input:focus, textarea:focus {
+.input:focus, textarea:focus {
   outline: none;
   border-color: $color-1;
 }
 
-input[type='button'], input[type='submit'], button, .button {
+.input[type='button'], .input[type='submit'], .button, .button {
   border: none;
-  background: transparent;
   line-height: 1;
   cursor: pointer;
   padding: 1em 1.5em;
-  -webkit-transition: all .3s ease;
-  -moz-transition: all .3s ease;
-  -ms-transition: all .3s ease;
-  -o-transition: all .3s ease;
   transition: all .3s ease;
-  display: block;
   margin-bottom: .75em;
   margin-bottom: .75rem;
 }
 
-.form-btn-1 {
-   color: $grey-1;
-  background: $color-2 !important;
+.button {
+  display: inline-block;
+  margin-right:10px;
+  margin-left:10px;
 }
 
-.btn-1 {
+.form-btn-1, .btn-1 {
   color: $grey-1;
-  background: $color-2;
-}
-.btn-1:hover {
-  background: $color-2;
-}
-.btn-1:focus, .btn-1:active {
-  background: $color-2;
+  @include btnHover($color-2);
+  &:hover {
+    color:$grey-1;
+  }
 }
 
 .btn-2 {
    color: $grey-1;
-  background: $color-4;
-}
-.btn-2:hover {
-  background: $color-4;
-}
-.btn-2:focus, .btn-2:active {
-  background: $color-4;
+  @include btnHover($color-3);
+   &:hover {
+    color:$grey-1;
+  }
 }
 
 .btn-3 {
-  font-size: .875em;
-  background: $grey-3;
-}
-.btn-3:hover {
-  background: $grey-3;
-}
-.btn-3:focus, .btn-3:active {
-  background: $grey-3;
-}
-
-/* ==========================================================================
-   =ADJECTIVES
-   ========================================================================== */
-.ws-adjectives div {
-  font-size: 1.5em;
-  padding-bottom: .25em;
-}
-
-/* ==========================================================================
-   =COLOPHON
-   ========================================================================== */
-.colophon {
-  clear: both;
-  text-align: center;
-  font-size: .875em;
-  padding: 1.714em 0;
-  border-top: thin solid #eee;
-  margin-top: 1.714em;
+  color: $grey-7 !important;
+  font-size: 14px;
+ @include btnHover($grey-4);
+  &:hover {
+    color:$grey-1;
+  }
 }
 
 /* =========================================================================
@@ -384,6 +476,5 @@ input[type='button'], input[type='submit'], button, .button {
   background:$grey-3;
   box-shadow:$shadow-1;
 }
-
 
 

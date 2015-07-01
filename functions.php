@@ -19,22 +19,22 @@
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
+add_shortcode('img_path', 'image_path_shortcode');
+add_shortcode('page_path', 'page_path_shortcode');
+
 // Adds image path short code. syntax: [img_path file="..."]
-
-add_shortcode('img_path', 'get_relative_image_path_shortcode');
-
-function get_relative_image_path_shortcode($args) {
-	$upload_dir = wp_upload_dir();
-	$upload_dir = $upload_dir['url'];
-	return $upload_dir.'/'.$args['file'];
+function image_path_shortcode($args) {
+    $upload_dir = wp_upload_dir();
+    $upload_dir = $upload_dir['url'];
+    return $upload_dir.'/'.$args['file'];
 }
 
 //Adds page path shortcode. syntax: [page_path id="..."]
 
-add_shortcode('page_path', function($args) {
+function page_path_shortcode($args) {
     $id = $args['id'];
     return get_permalink($id);
-});
+};
 
 
 //google fonts 
@@ -271,6 +271,17 @@ if (function_exists('register_sidebar'))
         'before_title' => '<h3>',
         'after_title' => '</h3>'
     ));
+
+      register_sidebar(array(
+        'name' => __('Scripts', 'Add scripts to footer. Like Analytics.'),
+        'description' => __('Add scripts to footer. Like Analytics. Use a text widget with no title', 'html5blank'),
+        'id' => 'scripts',
+        'before_widget' => '<div id="%1$s" class="%2$s footer-wdgt-1">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>'
+    ));
+
 
 
 }

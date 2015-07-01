@@ -44,12 +44,12 @@ header
   background: #026596;
   padding: 5px 10px; }
   .business-info a {
-    color: lightgrey; }
+    color: #aaaaaa; }
   .business-info .top-wdgt-l {
-    color: white;
+    color: whitesmoke;
     float: left; }
   .business-info .top-wdgt-r {
-    color: lightgrey; }
+    color: #aaaaaa; }
   .business-info li {
     display: inline-block;
     margin-left: 20px;
@@ -84,10 +84,10 @@ nav
     position: relative;
     display: block;
     margin-left: -4px;
-    border-bottom: solid 1px white; }
+    border-bottom: solid 1px whitesmoke; }
     .nav li a {
       display: block;
-      color: white;
+      color: whitesmoke;
       padding: 18px 30px;
       text-transform: uppercase;
       font-size: 14px;
@@ -127,7 +127,7 @@ footer items
 =================================================================== */
 .footer-items {
   background: #e5e5e5;
-  border-top: solid 1px #F2F2F2;
+  border-top: solid 1px #e6e6e6;
   color: #525252; }
 
 /*=============================================================== 
@@ -140,10 +140,10 @@ footer {
   bottom: 0;
   background: #026596;
   text-align: center;
-  color: white;
+  color: whitesmoke;
   font-size: 12px; }
   footer a {
-    color: white; }
+    color: whitesmoke; }
   @media (max-width: 45em) {
     footer {
       position: relative;
@@ -151,11 +151,11 @@ footer {
       padding: 0;
       margin-left: 0; } }
 
-/* ==========================================================================
-   =COLOR
-   ========================================================================== */
-.swatch {
-  height: 5em; }
+swatch {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 5em;
+  margin: 10px; }
 
 .color-1 {
   background: #8DABE7; }
@@ -175,27 +175,109 @@ footer {
 .color-6 {
   background: #DDD5F8; }
 
+.grey-1 {
+  background: whitesmoke; }
+
+.grey-2 {
+  background: #e6e6e6; }
+
+.grey-3 {
+  background: #c8c8c8; }
+
+.grey-4 {
+  background: #aaaaaa; }
+
+.grey-5 {
+  background: #8c8c8c; }
+
+.grey-6 {
+  background: #646464; }
+
+.grey-7 {
+  background: #323232; }
+
+.grey-8 {
+  background: black; }
+
+.txt-color-1 {
+  color: #8DABE7; }
+
+.txt-color-2 {
+  color: #026596; }
+
+.txt-color-3 {
+  color: #e5e5e5; }
+
+.txt-color-4 {
+  color: #F7A710; }
+
+.txt-color-5 {
+  color: #9370E9; }
+
+.txt-color-6 {
+  color: #DDD5F8; }
+
+.txt-wht {
+  color: whitesmoke; }
+
 /* ===========================================================================
   typography
   =========================================================================== */
+p {
+  margin: 0 0 20px; }
+
+ul li, ol li {
+  line-height: 130%; }
+
+.pad-sm {
+  padding: 10px; }
+
+.pad-m {
+  padding: 25px; }
+
+.pad-l {
+  padding: 50px; }
+
 .headline-1 {
-  color: #026596;
   display: block;
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
-  font-size: 53px; }
+  font-size: 53px;
+  line-height: 1.2em;
+  margin: 0 0 15px -3px; }
+
+.sub-headline-1 {
+  letter-spacing: 0.3em;
+  line-height: 1.2em;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  margin: -20px 0 10px; }
 
 .title-1 {
   display: block;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 42px; }
+  font-size: 42px;
+  line-height: 1.2em;
+  margin-bottom: 15px; }
 
 .title-2 {
   display: block;
   font: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 22px; }
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2em;
+  margin-bottom: 15px; }
+
+.title-3 {
+  display: block;
+  font: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.2em;
+  margin-bottom: 10px; }
 
 /* ==========================================================================
    = User input
@@ -203,93 +285,76 @@ footer {
 .ws-form {
   margin-top: -1.5em; }
 
-input, textarea {
+.input, .textarea {
   /* Use for styling text based form elements, like name, email, password. 
   Button/submit specific styles below, those will override */
   display: block;
   padding: 0.5em;
   margin-bottom: 0.75em;
-  border: 0.1em solid lightgrey;
+  border: 0.1em solid #aaaaaa;
   width: 100%;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  resize: none; }
+          transition: all 0.3s ease;
+  resize: none;
+  font-size: 16px; }
 
-input:focus, textarea:focus {
+.input:focus, textarea:focus {
   outline: none;
   border-color: #8DABE7; }
 
-input[type='button'], input[type='submit'], button, .button {
+.input[type='button'], .input[type='submit'], .button, .button {
   border: none;
-  background: transparent;
   line-height: 1;
   cursor: pointer;
   padding: 1em 1.5em;
   -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  display: block;
+          transition: all 0.3s ease;
   margin-bottom: 0.75em;
   margin-bottom: 0.75rem; }
 
-.form-btn-1 {
-  color: white;
-  background: #026596 !important; }
+.button {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px; }
 
-.btn-1 {
-  color: white;
-  background: #026596; }
-
-.btn-1:hover {
-  background: #026596; }
-
-.btn-1:focus, .btn-1:active {
-  background: #026596; }
+.form-btn-1, .btn-1 {
+  color: whitesmoke;
+  background-color: #026596; }
+  .form-btn-1:hover, .btn-1:hover {
+    background-color: #014564; }
+  .form-btn-1:active, .form-btn-1:focus, .btn-1:active, .btn-1:focus {
+    background-color: #026596; }
+  .form-btn-1:hover, .btn-1:hover {
+    color: whitesmoke; }
 
 .btn-2 {
-  color: white;
-  background: #F7A710; }
-
-.btn-2:hover {
-  background: #F7A710; }
-
-.btn-2:focus, .btn-2:active {
-  background: #F7A710; }
+  color: whitesmoke;
+  background-color: #e5e5e5; }
+  .btn-2:hover {
+    background-color: #cccccc; }
+  .btn-2:active, .btn-2:focus {
+    background-color: #e5e5e5; }
+  .btn-2:hover {
+    color: whitesmoke; }
 
 .btn-3 {
-  font-size: 0.875em;
-  background: #e5e5e5; }
-
-.btn-3:hover {
-  background: #e5e5e5; }
-
-.btn-3:focus, .btn-3:active {
-  background: #e5e5e5; }
-
-/* ==========================================================================
-   =ADJECTIVES
-   ========================================================================== */
-.ws-adjectives div {
-  font-size: 1.5em;
-  padding-bottom: 0.25em; }
-
-/* ==========================================================================
-   =COLOPHON
-   ========================================================================== */
-.colophon {
-  clear: both;
-  text-align: center;
-  font-size: 0.875em;
-  padding: 1.714em 0;
-  border-top: thin solid #eee;
-  margin-top: 1.714em; }
+  color: #323232 !important;
+  font-size: 14px;
+  background-color: #aaaaaa; }
+  .btn-3:hover {
+    background-color: #909090; }
+  .btn-3:active, .btn-3:focus {
+    background-color: #aaaaaa; }
+  .btn-3:hover {
+    color: whitesmoke; }
 
 /* =========================================================================
    =objects
    ========================================================================= */
 .img-1 {
   padding: 10px;
-  background: #e5e5e5;
+  background: #c8c8c8;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.21);
           box-shadow: 0 1px 2px rgba(0, 0, 0, 0.21); }
